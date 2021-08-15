@@ -82,7 +82,7 @@ before_show_menu() {
 }
 
 install() {
-    bash <(curl -Ls https://blog.sprov.xyz/x-ui.sh)
+    bash <(curl -Ls https://raw.githubusercontent.com/shukryshuk/x-ui/main/x-ui.sh)
     if [[ $? == 0 ]]; then
         if [[ $# == 0 ]]; then
             start
@@ -101,7 +101,7 @@ update() {
         fi
         return 0
     fi
-    bash <(curl -Ls https://raw.githubusercontent.com/sprov065/x-ui/master/install.sh)
+    bash <(curl -Ls https://raw.githubusercontent.com/shukryshuk/x-ui/master/install.sh)
     if [[ $? == 0 ]]; then
         echo -e "${green}更新完成，已自动重启面板${plain}"
         exit 0
@@ -128,7 +128,7 @@ uninstall() {
     echo -e "卸载成功，如果你想删除此脚本，则退出脚本后运行 ${green}rm /usr/bin/x-ui -f${plain} 进行删除"
     echo ""
     echo -e "Telegram 群组: ${green}https://t.me/sprov_blog${plain}"
-    echo -e "Github issues: ${green}https://github.com/sprov065/x-ui/issues${plain}"
+    echo -e "Github issues: ${green}https://github.com/shukryshuk/x-ui/issues${plain}"
     echo -e "博客: ${green}https://blog.sprov.xyz/x-ui${plain}"
 
     if [[ $# == 0 ]]; then
@@ -277,13 +277,13 @@ migrate_v2_ui() {
 }
 
 install_bbr() {
-    bash <(curl -L -s https://raw.githubusercontent.com/sprov065/blog/master/bbr.sh)
+    bash <(curl -L -s https://raw.githubusercontent.com/shukryshuk/blog/master/bbr.sh)
     echo ""
     before_show_menu
 }
 
 update_shell() {
-    wget -O /usr/bin/x-ui -N --no-check-certificate https://github.com/sprov065/x-ui/raw/master/x-ui.sh
+    wget -O /usr/bin/x-ui -N --no-check-certificate https://github.com/shukryshuk/x-ui/raw/master/x-ui.sh
     if [[ $? != 0 ]]; then
         echo ""
         echo -e "${red}下载脚本失败，请检查本机能否连接 Github${plain}"
